@@ -75,7 +75,7 @@ function markTaskAsComplete(taskNumber) {
     if (err) throw err;
     let tasks = data.trim().split("\n");
     if (taskNumber > 0 && taskNumber <= tasks.length) {
-      tasks[taskNumber - 1] += " (completed)";
+      tasks[taskNumber - 1] += "  [task complete]";
       fs.writeFile(tasksFilePath, tasks.join("\n"), (err) => {
         if (err) throw err;
         console.log("Task marked as complete.");
